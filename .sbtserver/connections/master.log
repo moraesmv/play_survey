@@ -1,0 +1,97 @@
+New log file opened at Thu May 28 16:03:59 EDT 2015 by 10546@Marcuss-MacBook-Pro.local
+Taking next connection to: 62444
+New client attempting to connect on port: 62445-62444
+  Address = /10.32.233.41:62444
+This client on port 62445 has uuid 1fc0e8a5-f8a4-4845-a853-53c87f75518f configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-1fc0e8a5-f8a4-4845-a853-53c87f75518f
+Taking next connection to: 62444
+New client attempting to connect on port: 62489-62444
+  Address = /10.32.233.41:62444
+Handshake exception on socket: 62489
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 62444
+New client attempting to connect on port: 62490-62444
+  Address = /10.32.233.41:62444
+This client on port 62490 has uuid 3a88ebd9-9835-4a84-956c-2b891cfbb055 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-1fc0e8a5-f8a4-4845-a853-53c87f75518f, activator-3a88ebd9-9835-4a84-956c-2b891cfbb055
+Taking next connection to: 62444
+New client attempting to connect on port: 62609-62444
+  Address = /10.32.233.41:62444
+Handshake exception on socket: 62609
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 62444
+New client attempting to connect on port: 62610-62444
+  Address = /10.32.233.41:62444
+This client on port 62610 has uuid 771e258f-ccf1-4480-b979-44181d8df2cf configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-1fc0e8a5-f8a4-4845-a853-53c87f75518f, activator-3a88ebd9-9835-4a84-956c-2b891cfbb055, activator-771e258f-ccf1-4480-b979-44181d8df2cf
+Taking next connection to: 62444
+New client attempting to connect on port: 62790-62444
+  Address = /10.32.233.41:62444
+Handshake exception on socket: 62790
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 62444
+New client attempting to connect on port: 62791-62444
+  Address = /10.32.233.41:62444
+This client on port 62791 has uuid 78938215-6508-4276-954c-321250c31fe0 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-78938215-6508-4276-954c-321250c31fe0
+Taking next connection to: 62444
+New client attempting to connect on port: 62792-62444
+  Address = /10.32.233.41:62444
+Handshake exception on socket: 62792
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 62444
+New client attempting to connect on port: 62793-62444
+  Address = /10.32.233.41:62444
+This client on port 62793 has uuid c1226169-efaa-4076-90ab-76cf9ee96d8b configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-78938215-6508-4276-954c-321250c31fe0, activator-c1226169-efaa-4076-90ab-76cf9ee96d8b
+Taking next connection to: 62444
+New client attempting to connect on port: 62804-62444
+  Address = /10.32.233.41:62444
+Handshake exception on socket: 62804
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 62444
+New client attempting to connect on port: 62805-62444
+  Address = /10.32.233.41:62444
+This client on port 62805 has uuid 39159de4-3506-4a9b-a0ab-ccc1bf0aa7cf configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-78938215-6508-4276-954c-321250c31fe0, activator-c1226169-efaa-4076-90ab-76cf9ee96d8b, activator-39159de4-3506-4a9b-a0ab-ccc1bf0aa7cf
+Taking next connection to: 62444
