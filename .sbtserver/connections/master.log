@@ -1,28 +1,29 @@
-New log file opened at Thu May 28 16:09:21 EDT 2015 by 10781@Marcuss-MacBook-Pro.local
-Taking next connection to: 62895
-New client attempting to connect on port: 62896-62895
-  Address = /10.32.233.41:62895
-This client on port 62896 has uuid 27650b96-7b77-4de4-820e-b2b214da24f9 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
-Connected Clients: activator-27650b96-7b77-4de4-820e-b2b214da24f9
-Taking next connection to: 62895
-New client attempting to connect on port: 62897-62895
-  Address = /10.32.233.41:62895
-Handshake exception on socket: 62897
+New log file opened at Thu May 28 16:31:18 EDT 2015 by 11630@Marcuss-MacBook-Pro.local
+Taking next connection to: 63716
+New client attempting to connect on port: 63717-63716
+  Address = /10.32.233.41:63716
+This client on port 63717 has uuid 7e5ff2a6-c3b9-4526-9bf9-4be1d4523a44 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-7e5ff2a6-c3b9-4526-9bf9-4be1d4523a44
+Taking next connection to: 63716
+New client attempting to connect on port: 63718-63716
+  Address = /10.32.233.41:63716
+Handshake exception on socket: 63718
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
 	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 62895
-New client attempting to connect on port: 62898-62895
-  Address = /10.32.233.41:62895
-This client on port 62898 has uuid 28859271-142b-4782-a7dd-e472f71b49f1 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
-Connected Clients: activator-27650b96-7b77-4de4-820e-b2b214da24f9, activator-28859271-142b-4782-a7dd-e472f71b49f1
-Taking next connection to: 62895
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62895
+Taking next connection to: 63716
+New client attempting to connect on port: 63719-63716
+  Address = /10.32.233.41:63716
+This client on port 63719 has uuid 118fdecd-07ca-4b8e-9754-9a0ff32c0cc9 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-7e5ff2a6-c3b9-4526-9bf9-4be1d4523a44, activator-118fdecd-07ca-4b8e-9754-9a0ff32c0cc9
+Taking next connection to: 63716

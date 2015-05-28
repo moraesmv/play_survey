@@ -7,3 +7,16 @@ GET     /                           controllers.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+#Find survey by id to be displayed to the user and completed
+GET		/surveys/:id				controllers.Surveys.show(id: Long)
+
+#Submit results of the survey to database
+POST 	/results					controllers.Results.save()
+
+#Find list of results answered to be displayed
+GET 	/resultlist					controllers.Results.list()
+
+#Display selected result
+GET 	/results/:id				controllers.Results.selected()
