@@ -1,0 +1,38 @@
+New log file opened at Thu May 28 16:09:22 EDT 2015 by 10781@Marcuss-MacBook-Pro.local
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,sbt client logs are in: /Users/moraesmv/activator/survey-app/.sbtserver/connections/activator-27650b96-7b77-4de4-820e-b2b214da24f9.log))
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: /Users/moraesmv/activator/survey-app/.sbtserver/connections/master.log))
+Reading next message from client.
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: /Users/moraesmv/activator/survey-app/.sbtserver/master.log))
+Got request: ListenToEvents()
+Reading next message from client.
+Got request: ListenToBuildChange()
+Reading next message from client.
+Got request: SendSyntheticBuildChanged()
+Reading next message from client.
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: (3,ReceivedResponse())
+Got request: KeyLookupRequest(discoveredMainClasses)
+Reading next message from client.
+Got request: KeyLookupRequest(mainClass)
+Reading next message from client.
+Got request: KeyLookupRequest(echo:echoTraceSupported)
+Reading next message from client.
+Got request: KeyLookupRequest(echo:echoPlayVersionReport)
+Reading next message from client.
+Got request: KeyLookupRequest(echo:echoAkkaVersionReport)
+Reading next message from client.
+Got request: KeyLookupRequest(echo:echoTracePlayVersion)
+Reading next message from client.
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,> initialize))
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,> onFailure load-failed))
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,> boot))
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,> reload))
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: DetachedLogEvent(LogMessage(debug,[Loading] Scanning directory /Users/moraesmv/activator/survey-app/project))
+Got request: UnlistenToEvents()
+Reading next message from client.
+Sending msg to client activator-27650b96-7b77-4de4-820e-b2b214da24f9: (12,ReceivedResponse())
+Got request: UnlistenToBuildChange()
+Reading next message from client.
+Client activator-27650b96-7b77-4de4-820e-b2b214da24f9 EOF, shutting down.
+Stopping client.
+Dropping message (0,ReceivedResponse()) to dead client activator-27650b96-7b77-4de4-820e-b2b214da24f9
+Client activator-27650b96-7b77-4de4-820e-b2b214da24f9 thread exiting.
