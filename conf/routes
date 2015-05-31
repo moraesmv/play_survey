@@ -10,7 +10,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 
 #Find survey by id to be displayed to the user and completed
-GET		/surveys/:id				controllers.Surveys.show(id: Long)
+GET		/surveys/id				controllers.Surveys.show(id: Long)
 
 #Submit results of the survey to database
 POST 	/results					controllers.Results.save()
@@ -19,4 +19,4 @@ POST 	/results					controllers.Results.save()
 GET 	/resultlist					controllers.Results.list()
 
 #Display selected result
-GET 	/results/:id				controllers.Results.selected()
+GET 	/results/id				controllers.Results.selected()

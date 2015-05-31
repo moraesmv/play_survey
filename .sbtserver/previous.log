@@ -1,5 +1,5 @@
-New log file opened at Thu May 28 16:29:46 EDT 2015 by 11553@Marcuss-MacBook-Pro.local
-jvm 11553@Marcuss-MacBook-Pro.local
+New log file opened at Thu May 28 16:31:18 EDT 2015 by 11630@Marcuss-MacBook-Pro.local
+jvm 11630@Marcuss-MacBook-Pro.local
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.45-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -54,10 +54,3 @@ Use 'last' for the full log.
 > load-failed
 Failed to load project.
 > server-wait-for-reboot
-Done executing sbt server engine, result Right(Exit(0))
-Closing listening server socket
-Waiting for socket thread
-Waiting for request processor thread
-Waiting for command engine result
-Returning control to sbt launcher with result Exit(0)
-Closing the 11553@Marcuss-MacBook-Pro.local logs at Thu May 28 16:30:47 EDT 2015, goodbye.
