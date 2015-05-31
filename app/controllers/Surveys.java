@@ -8,9 +8,9 @@ import views.html.*;
 public class Surveys extends Controller 
 {
 	
-	public Result show(id id)
+	public Result show(Long id)
 	{
-		return ok(index.render(id));
+		return ok(index.render("id"));
 	}
 	
 }
