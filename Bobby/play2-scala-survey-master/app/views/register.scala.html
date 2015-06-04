@@ -2,18 +2,19 @@
 @(form: Form[LoginRequest])(implicit messages: Messages)
 
 
-@main("Welcome to Play") {
+@main("Registration Page") {
 
-<h3>Navigation</h3>
-<div id="nav">
-    <a href="/">Home</a><br />
-    <a href="/surveys">Surveys</a><br />
-    <a href="/questions">Questions</a><br />
-    <a href="/responses">Responses</a><br />
-    <a href="/orgs">Organizations</a><br />
-    <a href="/login">Login</a><br />
-    <a href="/register">Register</a>
-</div>
+<h2>Navigation</h2>
+<table>
+    <tr>
+        <td><a href="/">Home</a><br /></td>
+        <td><a href="/surveys">Surveys</a><br /></td>
+        <td><a href="/questions">Questions</a><br /></td>
+        <td><a href="/responses">Responses</a><br /></td>
+        <td><a href="/login">Login</a><br /></td>
+    </tr>
+</table>
+
 
     @helper.form(action = routes.Security.register()) {
         @helper.inputText(form("userId"),'_label -> "Enter New Username")
