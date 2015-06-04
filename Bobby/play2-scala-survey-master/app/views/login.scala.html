@@ -1,0 +1,28 @@
+@import models.UserModel.{LoginRequest}
+@(form: Form[LoginRequest])(implicit messages: Messages)
+
+
+@main("Welcome to Play") {
+
+<h3>Navigation</h3>
+<div id="nav">
+	<a href="/">Home</a><br />
+    <a href="/surveys">Surveys</a><br />
+    <a href="/questions">Questions</a><br />
+    <a href="/responses">Responses</a><br />
+    <a href="/orgs">Organizations</a><br />
+</div>
+
+    @helper.form(action = routes.Security.post()) {
+        @helper.inputText(form("userId"),'_label -> "Enter Username")
+        @helper.inputText(form("password"),'_label -> "Enter Password")
+        <input type="submit" value="Login" />
+    }
+<br />
+<br />
+<a href="/register">Register</a>
+
+
+
+
+}

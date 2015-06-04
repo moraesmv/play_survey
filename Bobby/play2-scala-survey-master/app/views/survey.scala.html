@@ -1,0 +1,49 @@
+@import models.SurveyModel._
+@(form: Form[Survey], surveys: Option[List[SurveyRecord]])(implicit messages: Messages)
+
+@tr(s_id: String, name: String) = {
+  <tr>
+    <td>@name</td>
+    <td><a href="/surveys/@s_id">Edit This Survey</a></td>
+    <td><a href="/form/@s_id">Take Survey</a></td>
+  </tr>
+}
+
+@main("Surveys") {
+
+<h2>Navigation</h2>
+<div id="nav">
+    <a href="/">Home</a><br />
+    <a href="/questions">Questions</a><br />
+    <a href="/responses">Responses</a><br />
+    <a href="/orgs">Organizations</a><br />
+    <a href="/login">Login</a><br />
+    <a href="/register">Register</a><br /><br />
+</div>
+
+
+<h3>Create New Survey</h3>
+    @helper.form(action = routes.Surveys.post()) {
+        @helper.inputText(form("name"),'_label -> "Survey Name")
+        <input type="submit" value="Create New Survey" />
+    }
+
+<h3>My Surveys</h3>
+    @surveys match {
+        case Some(list) => {
+<table>
+  <tr>
+    <td>Survey Name</td>
+    <td>Edit Link</td>
+    <td>Link to Form</td>
+  </tr>
+            @for(item <- list) {
+                @tr(item.s_id, item.name)
+            }
+</table>
+        }
+        case None => {
+            <p>No Surveys found</p>
+        }
+    }
+}
