@@ -58,3 +58,6 @@ test in assembly := {}
 
 jarName in assembly := "scmetrics.jar"
 
+
+
+fork in run := true

@@ -1,0 +1,20 @@
+New log file opened at Wed Jun 10 19:03:04 EDT 2015 by 32265@Marcuss-MacBook-Pro.local
+Sending msg to client activator-e391c57f-b442-4cc0-a494-fecef46fee02: DetachedLogEvent(LogMessage(debug,sbt client logs are in: /Users/Raxl/play_survey/.sbtserver/connections/activator-e391c57f-b442-4cc0-a494-fecef46fee02.log))
+Sending msg to client activator-e391c57f-b442-4cc0-a494-fecef46fee02: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: /Users/Raxl/play_survey/.sbtserver/connections/master.log))
+Reading next message from client.
+Sending msg to client activator-e391c57f-b442-4cc0-a494-fecef46fee02: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: /Users/Raxl/play_survey/.sbtserver/master.log))
+Client activator-e391c57f-b442-4cc0-a494-fecef46fee02 closed, java.net.SocketException: Connection reset, shutting down
+Stopping client.
+Dropping message DetachedLogEvent(LogMessage(debug,sbt general server logs are in: /Users/Raxl/play_survey/.sbtserver/master.log)) because client activator-e391c57f-b442-4cc0-a494-fecef46fee02 of an exception serializing and sending: java.net.SocketException: socket is closed
+stack trace sending message was 
+java.net.SocketException: socket is closed
+	at sbt.impl.ipc.Peer.send(IPC.scala:74)
+	at sbt.impl.ipc.Peer.send(IPC.scala:83)
+	at sbt.impl.ipc.Peer.sendString(IPC.scala:106)
+	at sbt.impl.ipc.Peer.sendJson(IPC.scala:119)
+	at sbt.server.SbtClientHandler$$anonfun$send$1.apply$mcV$sp(SbtClientHandler.scala:128)
+	at sbt.server.SbtClientHandler.wrappedSend(SbtClientHandler.scala:113)
+	at sbt.server.SbtClientHandler.send(SbtClientHandler.scala:128)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:94)
+Dropping message (0,ReceivedResponse()) to dead client activator-e391c57f-b442-4cc0-a494-fecef46fee02
+Client activator-e391c57f-b442-4cc0-a494-fecef46fee02 thread exiting.
