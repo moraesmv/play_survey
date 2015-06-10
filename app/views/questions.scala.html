@@ -1,0 +1,56 @@
+@import models.QuestionModel.{Question,QuestionRecord}
+@(form: Form[Question], questions: Option[List[QuestionRecord]])(implicit messages: Messages)
+
+@tr(q_id: String, s: String, s1: String, s2: String, s3: String) = {
+  <tr>
+    <td>@s</td>
+    <td>@s1</td>
+    <td>@s2</td>
+    <td>@s3</td>
+  </tr>
+}
+
+@main("Questions") {
+
+<h2>Navigation</h2>
+<table>
+    <tr>
+        <td><a href="/">Home</a><br /></td>
+        <td><a href="/surveys">Surveys</a><br /></td>
+        <td><a href="/responses">Responses</a><br /></td>
+        <td><a href="/login">Login</a><br /></td>
+        <td><a href="/register">Register</a><br /></td>
+    </tr>
+</table>
+
+
+<h3>Create New Question</h3>
+    @helper.form(action = routes.Questions.post()) {
+        @helper.inputText(form("text"),'_label -> "Question Text")
+        @helper.inputText(form("a1"),'_label -> "Choice 1")
+        @helper.inputText(form("a2"),'_label -> "Choice 2")
+        @helper.inputText(form("a3"),'_label -> "Choice 3")
+        <input type="submit" value="Create Question" />
+    }
+
+
+    @questions match {
+        case Some(list) => {
+<h3>My Questions</h3>
+<table>
+  <tr>
+    <td>Question Text</td>
+    <td>Choice 1</td>
+    <td>Choice 2</td>
+    <td>Choice 3</td>
+  </tr>
+            @for(item <- list) {
+                @tr(item.q_id, item.question.text, item.question.a1, item.question.a2, item.question.a3)
+            }
+</table>
+        }
+        case None => {
+            <p>No Questions found</p>
+        }
+    }
+}

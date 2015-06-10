@@ -1,0 +1,171 @@
+@(s_id: String, o_id: String)
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <h3>Navigation</h3>
+    <table>
+      <tr>
+        <td><a href="/">Home</a><br /></td>
+        <td><a href="/questions">Questions</a><br /></td>
+        <td><a href="/responses">Responses</a><br /></td>
+        <td><a href="/login">Login</a><br /></td>
+        <td><a href="/register">Register</a><br /></td>
+      </tr>
+    </table>
+
+    <script>
+
+function getSurveyJSON(s_id,o_id){
+  var xmlhttp = new XMLHttpRequest();
+  var url = '/v1/surveys/' + s_id;
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var json = JSON.parse(xmlhttp.responseText);
+        createForm(json,o_id,'surveyForm');
+    }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+
+function cb(string) {
+  document.getElementById('msg').innerHTML = string;
+}
+
+function createForm(surveyObject,o_id,divName){
+    var f = document.createElement("form");
+    f.setAttribute('method',"post");
+    f.setAttribute('action',"/v1/responses");
+    f.setAttribute('id',"survey");
+
+    var x = document.createElement("input");
+    x.setAttribute('type',"hidden");
+    x.setAttribute('name',"s_id");
+    x.setAttribute('value',surveyObject.s_id);
+    f.appendChild(x);
+
+    var y = document.createElement("input");
+    y.setAttribute('type',"hidden");
+    y.setAttribute('name',"o_id");
+    y.setAttribute('value',o_id);
+    f.appendChild(y);
+
+    for(var i = 0; i < surveyObject.questions.length; i++) {
+        var q = surveyObject.questions[i];
+        var newdiv = document.createElement('div');
+        var t = document.createElement('table');
+
+        var row1 = document.createElement('tr');
+        var row2 = document.createElement('tr');
+        var row3 = document.createElement('tr');
+        var title = document.createElement('td');
+        title.innerHTML = q.text;
+        title.setAttribute('colspan','5');
+        row1.appendChild(title);
+        t.appendChild(row1);
+
+        for(var k = 1; k <= 3; k++) {
+            var col = document.createElement('td');
+            switch(k) {
+                case 1:
+                    col.innerHTML = q.a1;
+                    break;
+                case 2:
+                    col.innerHTML = q.a2;
+                    break;
+                case 3:
+                    col.innerHTML = q.a3;
+                    break;
+            }
+            row2.appendChild(col);
+        }
+
+        for(var j = 1; j <= 3; j++) {
+            var col = document.createElement('td');
+            var label = document.createElement('label');
+            var lspan = document.createElement('span');
+            lspan.setAttribute('class','label-body');
+            var input = document.createElement('input');
+            input.setAttribute('type','radio');
+            input.setAttribute('name',q.q_id);
+            input.setAttribute('value',j);
+            lspan.appendChild(input);
+            label.appendChild(lspan);
+            col.appendChild(label);
+            row3.appendChild(col);
+        }
+
+        t.appendChild(row2);
+        t.appendChild(row3);
+        newdiv.appendChild(t);
+        f.appendChild(newdiv);
+    }
+
+    var s = document.createElement("input");
+    s.setAttribute('class', "button-primary");
+    s.setAttribute('type', "button");
+    s.setAttribute('onclick',"submitJSON('surveyForm', '/v1/responses', cb);");
+    s.setAttribute('value', "Submit Responses");
+    f.appendChild(s);
+
+    document.getElementById(divName).appendChild(f);
+
+}
+
+function showJSON(formId,divName){
+  var json = toJSON(formId)
+  document.getElementById(divName).innerHTML = json;
+}
+
+function toJSON(formId){
+
+  var survey = document.getElementById('survey');
+  var s_id = survey.elements['s_id'].value;
+  var o_id = survey.elements['o_id'].value;
+
+  var inputs = survey.getElementsByTagName('input');
+  var responses = [];
+  for(var i = 0; i < inputs.length; i++) {
+    if (inputs[i].type == 'radio' && inputs[i].checked){
+      responses.push({q_id: inputs[i].name,response: parseInt(inputs[i].value)});
+    }
+  }
+
+  var response = [];
+  response.push({s_id: s_id, o_id: o_id, responses: responses});
+  var json = JSON.stringify(response[0]);
+  return json;
+}
+
+
+
+function submitJSON(formId,url,callback){
+  var json = toJSON(formId);
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/v1/responses");
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+       callback(xhr.responseText);
+    }
+    callback(xhr.responseText);
+  }
+  xhr.send(json);
+}
+
+</script>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("normalize.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("skeleton.css")">
+</head>
+<body onload="getSurveyJSON('@s_id','@o_id');">
+<div id="surveyForm"></div>
+<div id="output"></div>
+<div id="msg"></div>
+<input type="button" value="Show JSON" onClick="showJSON('surveyForm','output');">
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+@import models.QuestionModel.QuestionRecord
+@(s_id: String, questions: Option[List[QuestionRecord]], allquestions: Option[List[QuestionRecord]])
+
+@tr(id: String, s: String, s1: String, s2: String, s3: String) = {
+  <tr>
+    <td>@s</td>
+    <td>@s1</td>
+    <td>@s2</td>
+    <td>@s3</td>
+    <td><A id="delete" title="Delete this question" href="#" onclick="deleteQuestionFromSurvey('@id', '@s_id',cb);return false;">Delete</a></td>
+  </tr>
+}
+
+@tr2(id: String, s: String, s1: String, s2: String, s3: String) = {
+<tr>
+    <td>@s</td>
+    <td>@s1</td>
+    <td>@s2</td>
+    <td>@s3</td>
+    <td><a id="add" title="Add this question" href="#" onclick="addQuestionToSurvey('@id','@s_id',cb);return false;">Add to survey</a></td>
+    <td><A HREF="javascript:history.go(0)">Click to show changes</A></td>
+</tr>
+}
+
+@main("Welcome to Play") {
+
+<h3>Navigation</h3>
+<div id="nav">
+    <a href="/">Home</a><br />
+    <a href="/form/@s_id">Take this survey</a><br />
+    <a href="/questions">Questions</a><br />
+    <a href="/surveys">Surveys</a><br />
+    <a href="/responses">Responses</a><br />
+    <a href="/login">Login</a><br />
+    <a href="/register">Register</a><br /><br />
+</div>
+
+<script>
+function cb(string) {
+  document.getElementById('msg').innerHTML = string;
+}
+
+function addQuestionToSurvey(q_id,s_id,callback){
+
+  var data = {"s_id":s_id,q_ids:[q_id]}
+  var json = JSON.stringify(data);
+
+  var xhr = new XMLHttpRequest();
+  var url = '/v1/surveys/' + s_id;
+  xhr.open('POST', url);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+       callback(xhr.responseText);
+    }
+    callback(xhr.responseText);
+  }
+  xhr.send(json);
+}
+
+//DO THIS
+function deleteQuestionFromsurvey(q_id,s_id,callback){
+  
+  var data = {"s_id":s_id,q_ids:[q_id]}
+
+  var xhr = new XMLHttpRequest();
+  var url = '/v1/surveys' + s_if;
+  xhr.open('POST', url);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      callback(xhr.responseText);
+    }
+    callback(xhr.responseText);
+  }
+
+}
+
+</script>
+
+    @questions match {
+        case Some(list) => {
+<h2>Questions in this Survey</h2>
+<table>
+  <tr>
+    <td>Question Text</td>
+    <td>Choice 1</td>
+    <td>Choice 2</td>
+    <td>Choice 3</td>
+  </tr>
+            @for(item <- list) {
+                @tr(item.q_id,item.question.text,item.question.a1,item.question.a2,item.question.a3)
+            }
+</table>
+        }
+        case None => {
+            <p>This survey currently has no questions</p>
+        }
+    }
+
+
+    @allquestions match {
+        case Some(list) => {
+<h2>My Questions</h2>
+<table>
+    <tr>
+        <td>Question Text</td>
+        <td>Choice 1</td>
+        <td>Choice 2</td>
+        <td>Choice 3</td>
+    </tr>
+            @for(item <- list) {
+                @tr2(item.q_id,item.question.text,item.question.a1,item.question.a2,item.question.a3)
+            }
+</table>
+        }
+        case None => {
+<p>This survey currently has no questions</p>
+        }
+    }
+
+<div id="msg"></div>
+}
