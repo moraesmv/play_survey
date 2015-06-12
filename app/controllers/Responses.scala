@@ -14,7 +14,7 @@ object Responses extends Controller {
 
   def get = Action {
     val items: Option[List[ResponseRecord]] = ResponseModel.getResponses
-    Ok(views.html.responses(items))
+    Ok(views.html.results(items))
   }
 
   def getResponses(q_id: String) = Action {

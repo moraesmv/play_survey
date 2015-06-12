@@ -10,10 +10,32 @@
   </tr>
 }
 
+<!DOCTYPE html>
 
-@main("Responses" ) {
+<html>
+    <head>
+        <title>Responses</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("normalize.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("skeleton.css")">
+   
+<script type="text/JavaScript">
 
-<h2>Navigation</h2>
+<!--
+
+function TimedRefresh( t ) {
+
+setTimeout("location.reload(true);", t);
+
+}
+
+//   -->
+
+</script>
+
+    </head>
+    <body onload="JavaScript:TimedRefresh(30000);"  >
+ 
+        <h2>Navigation</h2>
 <table>
     <tr>
         <td><a href="/">Home</a><br /></td>
@@ -24,7 +46,7 @@
     </tr>
 </table>
 
-    @responses match {
+            @responses match {
         case Some(list) => {
 <table>
   <tr>
@@ -42,4 +64,7 @@
             <h5>No Responses found</h5>
         }
     }
-}
+
+        
+    </body>
+</html>
