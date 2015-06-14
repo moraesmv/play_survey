@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Search By:"
+        android:id="@+id/searchHeaderText"
+        android:gravity="center"
+        android:layout_weight="10"/>
+
+    <EditText
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchUNameText"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_weight="10"
+        android:hint="@string/search_by_name"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/searchIdText"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_weight="10"
+        android:hint="@string/search_by_id"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="70"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="10">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By ID"
+            android:id="@+id/searchByIdBtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="10"
+            android:onClick="searchById" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Name"
+            android:id="@+id/searchByNameBtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="10"
+            android:onClick="searchByName"/>
+    </LinearLayout>
+</LinearLayout>

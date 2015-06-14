@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sign Up"
+        android:id="@+id/signUpText" />
+
+    <EditText
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpUNameText"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:hint="username"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+    <EditText
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpEmailText"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:hint="email"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+    <EditText
+        android:inputType="textPassword"
+        android:hint="password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:id="@+id/signInPasswordText1"
+        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+    <EditText
+        android:inputType="textPassword"
+        android:hint="password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:id="@+id/signInPasswordText2"
+        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff5b00"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="40"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="10">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/backBtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="10"
+            android:onClick="back" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:id="@+id/signUpBtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="10"
+            android:onClick="validate"/>
+    </LinearLayout>
+</LinearLayout>
